@@ -42,7 +42,7 @@ public class CoinMan extends ApplicationAdapter {
     Music coinMusic;
     Music bombMusic;
     Music gameMusic;
-    int score = 0,lives=3, coinspeed=2, bombspeed=3,legspeed =20;
+    int score = 0,lives=3, coinspeed=2, bombspeed=3,legspeed =20,numBomb=300;
     float time=0;
     BitmapFont font;
     int gameState;
@@ -86,7 +86,7 @@ public class CoinMan extends ApplicationAdapter {
     }
     public void gamestart(){
         timer();
-        if (bombCount<300){
+        if (bombCount<numBomb){
             bombCount++;
         }else{
             bombCount = 0;
@@ -138,6 +138,7 @@ public class CoinMan extends ApplicationAdapter {
             coinspeed+=2;
             bombspeed+=3;
             legspeed+=4;
+            numBomb+=20;
             time=0;
         }
     }
